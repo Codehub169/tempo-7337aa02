@@ -1,0 +1,51 @@
+/*
+  Startup Idea Analyzer - Global Stylesheet
+  This file imports Tailwind CSS and defines base global styles for the application.
+*/
+
+/* Import Tailwind CSS base styles, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Global base styles 
+  - Sets default font to 'Inter' (font-sans as defined in Tailwind config).
+  - Sets default background to 'primary' color (#1A202C) and text to 'light-gray' (#F7FAFC) for readability on the dark background.
+  - Enables font antialiasing for smoother text rendering.
+  - Ensures the html and body take up full height and have a smooth scroll behavior.
+*/
+@layer base {
+  html {
+    @apply h-full scroll-smooth;
+  }
+  body {
+    @apply h-full bg-primary text-light-gray font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar styling for a more modern look (optional, browser support varies) */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-primary;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary rounded-md;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent;
+  }
+
+  /* Define a basic visual hierarchy for headings if not fully covered by Tailwind defaults or component-specific styling */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+/* 
+  Utility classes for custom animations defined in tailwind.config.js can be applied directly. 
+  Example: .animate-fadeIn, .animate-slideUp 
+*/

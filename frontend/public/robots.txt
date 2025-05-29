@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Sitemap: [URL to sitemap if/when available, e.g., https://www.yourdomain.com/sitemap.xml]
